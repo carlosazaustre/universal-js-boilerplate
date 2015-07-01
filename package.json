@@ -1,0 +1,37 @@
+{
+  "name": "universal-js-boilerplate",
+  "version": "0.0.1",
+  "description": "A boilerplate to start universal (isomorphic) web applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlosazaustre/universal-js-boilerplate"
+  },
+  "keywords": [
+    "boilerplate",
+    "web development",
+    "frontend",
+    "javascript"
+  ],
+  "author": "Carlos Azaustre <cazaustre@gmail.com> (https://carlosazaustre.es/blog)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlosazaustre/universal-js-boilerplate/issues"
+  },
+  "homepage": "https://github.com/carlosazaustre/universal-js-boilerplate",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "^5.6.14",
+    "babel-eslint": "^3.1.20",
+    "babel-runtime": "^5.6.15",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "gulp": "^3.9.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
