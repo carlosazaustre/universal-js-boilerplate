@@ -8,7 +8,7 @@ import buffer     from 'vinyl-buffer'
 
 gulp.task('build:js', () => {
   return browserify({
-    entries: './client.jsx'
+    entries: './client.jsx',
     debug: true,
     extensions: ['.js', '.jsx'],
     transform: babelify

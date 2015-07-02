@@ -4,7 +4,8 @@
   "description": "A boilerplate to start universal (isomorphic) web applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "start": "babel-node server.js"
   },
   "repository": {
     "type": "git",
@@ -14,7 +15,11 @@
     "boilerplate",
     "web development",
     "frontend",
-    "javascript"
+    "javascript",
+    "es6",
+    "ecmascript 6",
+    "react",
+    "isomorphic"
   ],
   "author": "Carlos Azaustre <cazaustre@gmail.com> (https://carlosazaustre.es/blog)",
   "license": "MIT",
@@ -23,12 +28,10 @@
   },
   "homepage": "https://github.com/carlosazaustre/universal-js-boilerplate",
   "dependencies": {
-    "course": "0.0.1",
     "express": "^4.13.0",
     "react": "^0.13.3",
     "react-engine": "^1.7.0",
-    "react-router": "^0.13.3",
-    "st": "^0.5.4"
+    "react-router": "^0.13.3"
   },
   "devDependencies": {
     "babel": "^5.6.14",

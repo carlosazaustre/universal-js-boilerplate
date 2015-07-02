@@ -1,17 +1,28 @@
 'use strict'
 
 import path from 'path'
-import http from 'http'
-import router from './router'
+import express from 'express'
+import engine from 'react-engine'
 
-const server = http.createServer()
+const app = express()
 const port = process.env.PORT || 3000
 
-server.on('request', router)
-server.on('listening', onListening)
+// -- Setup React Views engine -------------------------------------------------
 
-server.listen(port)
+app.engine('.jsx', engine.server.create())
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'jsx')
+app.set('view', engine.expressView)
 
-function onListening (req, res) {
+// -- Routes -------------------------------------------------------------------
+
+app.use('/assets', express.static('public'))
+app.get('/', (req, res) => {
+  res.render('home')
+})
+
+// -- Start the application server ---------------------------------------------
+
+app.listen(port, () => {
   console.log(`Server listening on port: ${port}`)
-}
+})
