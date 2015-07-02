@@ -1,6 +1,7 @@
 'use strict'
 
 import gulp       from 'gulp'
+import eslint     from 'babel-eslint'
 import babelify   from 'babelify'
 import browserify from 'browserify'
 import source     from 'vinyl-source-stream'
@@ -8,10 +9,10 @@ import buffer     from 'vinyl-buffer'
 
 gulp.task('build:js', () => {
   return browserify({
-    entries: './client.jsx',
-    debug: true,
+    entries   : './client.js',
+    debug     : true,
     extensions: ['.js', '.jsx'],
-    transform: babelify
+    transform : babelify
   })
   .bundle()
   .pipe(source('app.js'))
