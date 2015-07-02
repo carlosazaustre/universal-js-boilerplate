@@ -1,23 +1,41 @@
 'use strict'
 
-import express from 'express'
-import engine from 'react-engine'
 import path from 'path'
+import http from 'http'
+import course from 'course'
+import React from 'react'
+import App from './views/app'
 
-const app = express()
+const server = http.createServer()
 const port = process.env.PORT || 3000
+const router = course()
 
-// -- View Engine --------------------------------------------------------------
+server.on('request', onRequest)
+server.on('listening', onListening)
 
-app.engine('.jsx', engine.server.create())
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jsx')
-app.set('view', engine.expressView)
+router.get('/', (req, res) => {
+  let html = React.renderToString(<App />)
 
-app.get('/', (req, res) => {
-  res.render('app')
+  res.setHeader('Content-Type', 'text/html')
+  res.end(html)
 })
 
-app.listen(port, () => {
-  console.log(`Express server listening on port: ${port}`)
-})
+server.listen(port)
+
+function onRequest (req, res) {
+  router(req, res, (err) => {
+    if (err) {
+      res.statusCode = 500
+      res.setHeader('Content-Type', 'text/plain')
+      return res.end(err.message)
+    }
+
+    res.statusCode = 404
+    res.setHeader('Content-Type', 'text/plain')
+    res.end(`404 Not Found: ${req.url}`)
+  })
+}
+
+function onListening (req, res) {
+  console.log(`Server listening on port: ${port}`)
+}
