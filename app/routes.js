@@ -3,12 +3,12 @@
 import React from 'react'
 import Router from 'react-router'
 
-// -- Components ---------------------------------------------------------------
+// -- View React Components ----------------------------------------------------
 
-import Home from './views/home'
 import App from './views/app'
+import Home from './views/home'
 
-// -- Routes Configuration -----------------------------------------------------
+// -- Routes Configuration (Shared between Client and Server) ------------------
 
 const routes = (
   <Router.Route path='/' handler={ App }>

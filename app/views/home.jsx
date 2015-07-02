@@ -1,16 +1,14 @@
 'use strict'
 
-import React    from 'react'
-import { Link } from 'react-router'
+import React from 'react'
 
 class Home extends React.Component {
 
   render() {
     return (
-      <header>
-        <h1>Universal JS Boilerplate</h1>
-        <Link to='home'>Home</Link>
-      </header>
+      <section>
+        <h3>Home</h3>
+      </section>
     )
   }
 }
