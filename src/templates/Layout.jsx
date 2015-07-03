@@ -20,7 +20,7 @@ class Layout extends React.Component {
           <script src='/assets/app.js'></script>
         </body>
       </html>
-    )
+    );
   }
 }
 

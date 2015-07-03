@@ -10,6 +10,8 @@
 
 import gulp       from 'gulp';
 import eslint     from 'gulp-eslint';
+import stylint    from 'gulp-stylint';
+import jscs       from 'gulp-jscs';
 import babelify   from 'babelify';
 import browserify from 'browserify';
 import stylus     from 'gulp-stylus';
@@ -24,14 +26,23 @@ gulp.task('default', ['build', 'watch']);
 
 gulp.task('build', ['build:js', 'build:css']);
 
+// -- Linters
 gulp.task('eslint', () => {
   return gulp
     .src(['./src/**/*.js', './src/**/*.jsx'])
+    .pipe(jscs())
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
 });
 
+gulp.task('stylint', () => {
+  return gulp
+    .src(['./src/styles/**/*.styl', './src/components/**/*.styl'])
+    .pipe(stylint({ config: '.stylintrc' }));
+});
+
+// -- Builders
 gulp.task('build:js', ['eslint'], () => {
   return browserify({
     entries   : './src/client.js',
@@ -45,7 +56,7 @@ gulp.task('build:js', ['eslint'], () => {
   .pipe(gulp.dest('./build/public'));
 });
 
-gulp.task('build:css', () => {
+gulp.task('build:css', ['stylint'], () => {
   return gulp
     .src('./src/styles/app.styl')
     .pipe(stylus({
@@ -55,6 +66,8 @@ gulp.task('build:css', () => {
     .pipe(minifyCSS())
     .pipe(gulp.dest('./build/public'));
 });
+
+// -- Watch files
 
 gulp.task('watch', () => {
   gulp.watch([
