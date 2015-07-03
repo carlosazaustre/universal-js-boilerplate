@@ -16,8 +16,6 @@
     "jsx": true
   },
   "rules": {
-    // Strict mode
-    "strict": [2, "never"],
 
     // Code style
     "indent": [2, 2],
