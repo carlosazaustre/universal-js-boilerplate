@@ -2,13 +2,11 @@
 
 import path from 'path';
 import express from 'express';
-import fetch from 'node-fetch';
 import engine from 'react-engine';
 import config from '../config';
 
 const app = express();
-const api = config.api;
-const port = config.port;
+const port = config.app.port;
 
 // -- Setup React Views engine -------------------------------------------------
 
@@ -19,17 +17,17 @@ app.set('view', engine.expressView);
 
 // -- Routes -------------------------------------------------------------------
 
-app.use('/assets', express.static(path.join(__dirname, 'public')));
+app.use('/assets', express.static(path.join(__dirname, '..', 'build', 'public')));
 
 app.get('/', (req, res) => {
-  fetch(`${api}/resources`)
-    .then(response => response.json())
-    .then((data) => {
-      res.render('app', {
-        resources: data.resources,
-        title: 'Project - Resource List'
-      });
-    });
+  res.render('app', {
+    components: [
+      { id: 1, title: 'Item 1' },
+      { id: 2, title: 'Item 2' },
+      { id: 3, title: 'Item 3' }
+    ],
+    title: config.app.name
+  });
 });
 
 // -- Start the application server ---------------------------------------------

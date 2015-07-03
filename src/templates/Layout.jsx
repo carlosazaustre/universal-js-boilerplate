@@ -11,7 +11,7 @@ class Layout extends React.Component {
           <meta charSet='utf-8' />
           <title>Project Title</title>
           <meta name='viewport' content='width=device-width, inital-scale=1.0' />
-          <link rel='stylesheet' href='/assets/main.css' />
+          <link rel='stylesheet' href='/assets/app.css' />
         </head>
         <body>
           <main role='application' id='app'>
