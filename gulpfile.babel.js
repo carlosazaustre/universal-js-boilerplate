@@ -38,7 +38,11 @@ gulp.task('eslint', () => {
 
 gulp.task('stylint', () => {
   return gulp
-    .src(['./src/styles/**/*.styl', './src/components/**/*.styl'])
+    .src([
+      './src/styles/**/*.styl',
+      './src/components/**/*.styl',
+      '!./src/styles/base/normalize.styl',
+    ])
     .pipe(stylint({ config: '.stylintrc' }));
 });
 
@@ -48,7 +52,7 @@ gulp.task('build:js', ['eslint'], () => {
     entries   : './src/client.js',
     debug     : true,
     extensions: ['.js', '.jsx'],
-    transform : babelify
+    transform : babelify,
   })
   .bundle()
   .pipe(source('app.js'))
@@ -61,7 +65,7 @@ gulp.task('build:css', ['stylint'], () => {
     .src('./src/styles/app.styl')
     .pipe(stylus({
       use: nib(),
-      'include css': true
+      'include css': true,
     }))
     .pipe(minifyCSS())
     .pipe(gulp.dest('./build/public'));
@@ -73,10 +77,10 @@ gulp.task('watch', () => {
   gulp.watch([
     './src/client.js',
     './src/server.js',
-    './src/components/**/*.jsx'
+    './src/components/**/*.jsx',
   ], ['build:js']);
   gulp.watch([
-    './src/styles/index.styl',
-    './src/components/**/*.styl'
+    './src/styles/**/*.styl',
+    './src/components/**/*.styl',
   ], ['build:css']);
 });

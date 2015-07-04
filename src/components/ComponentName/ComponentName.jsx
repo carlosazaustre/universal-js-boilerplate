@@ -11,8 +11,8 @@ class ComponentName extends React.Component {
 
   render () {
     return (
-      <article>
-        <h3>{ this.state.title }</h3>
+      <article className='ComponentName'>
+        <h3 className='ComponentName-title'>{ this.state.title }</h3>
       </article>
     );
   }
