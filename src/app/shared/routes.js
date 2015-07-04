@@ -1,16 +1,19 @@
 'use strict';
 
 import React from 'react';
-import Router from 'react-router';
+import { Route, DefaultRoute } from 'react-router';
 
 // -- View Components
 import App from './components/App';
 import ComponentList from './components/ComponentList';
+import About from './components/About';
 
 const routes = (
-  <Router.Route path='/' handler={ App }>
-    <Router.DefaultRoute name='component-list' handler={ ComponentList }/>
-  </Router.Route>
+  <Route path='/' handler={ App }>
+    <DefaultRoute name='main' handler={ ComponentList }/>
+    <Route name='components' handler={ ComponentList }/>
+    <Route name="about" handler={ About }/>
+  </Route>
 );
 
 export default routes;

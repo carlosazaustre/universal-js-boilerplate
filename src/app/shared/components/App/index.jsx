@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import Router from 'react-router';
+import { RouteHandler, Link } from 'react-router';
 import Layout from '../Layout';
 
 class App extends React.Component {
@@ -17,8 +17,14 @@ class App extends React.Component {
         <header>
           <h1>{ this.props.title }</h1>
         </header>
+        <nav>
+          <ul>
+            <li><Link to="/components">Components List</Link></li>
+            <li><Link to="/about">About</Link></li>
+          </ul>
+        </nav>
         <main role="application">
-          <Router.RouteHandler {...this.props} />
+          <RouteHandler {...this.props}/>
         </main>
       </Layout>
     );
