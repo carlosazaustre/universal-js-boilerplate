@@ -12,7 +12,7 @@ A boilerplate to quick start JavaScript Isomorphic Web Applications
 * **[React](http://facebook.github.io/react/)** - A JavaScript library for building user interfaces.
 * **[React Router](http://rackt.github.io/react-router/)** - Complete routing solution designed specifically for React.js.
 * **[React Engine](https://github.com/paypal/react-engine)** - A composite render engine for isomorphic express apps to render both plain react views and react-router views.
-* **[Stylus]()** -
+* **[Stylus](https://learnboost.github.io/stylus/)** - Expressive, dynamic, robust CSS 
 * **[NodeJS](https://nodejs.org/)** - Platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
 * **[Express](http://expressjs.com/)** - Fast, unopinionated, minimalist web framework for Node.js.
 * **[Gulp](http://gulpjs.com/)** - Automate and enhance your workflow.
