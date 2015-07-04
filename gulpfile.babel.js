@@ -29,7 +29,7 @@ gulp.task('build', ['build:js', 'build:css']);
 // -- Linters
 gulp.task('eslint', () => {
   return gulp
-    .src(['./src/**/*.js', './src/**/*.jsx'])
+    .src(['./src/app/**/*.js', './src/app/**/*.jsx'])
     .pipe(jscs())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -40,7 +40,7 @@ gulp.task('stylint', () => {
   return gulp
     .src([
       './src/styles/**/*.styl',
-      './src/components/**/*.styl',
+      './src/app/shared/components/**/*.styl',
       '!./src/styles/base/normalize.styl',
     ])
     .pipe(stylint({ config: '.stylintrc' }));
@@ -49,7 +49,7 @@ gulp.task('stylint', () => {
 // -- Builders
 gulp.task('build:js', ['eslint'], () => {
   return browserify({
-    entries   : './src/client.js',
+    entries   : './src/app/client/index.js',
     debug     : true,
     extensions: ['.js', '.jsx'],
     transform : babelify,
@@ -75,12 +75,13 @@ gulp.task('build:css', ['stylint'], () => {
 
 gulp.task('watch', () => {
   gulp.watch([
-    './src/client.js',
-    './src/server.js',
-    './src/components/**/*.jsx',
+    './src/app/server/index.js',
+    './src/app/client/index.js',
+    './src/app/shared/components/**/*.jsx',
+    './src/app/shared/routes.js'
   ], ['build:js']);
   gulp.watch([
     './src/styles/**/*.styl',
-    './src/components/**/*.styl',
+    './src/app/shared/components/**/*.styl',
   ], ['build:css']);
 });
