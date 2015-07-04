@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
-    "start": "./node_modules/babel/bin/babel-node ./src/server.js"
+    "start": "nodemon --exec babel-node --stage 0 -- ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -49,6 +49,7 @@
     "gulp-stylint": "^1.1.3",
     "gulp-stylus": "^2.0.5",
     "nib": "^1.1.0",
+    "nodemon": "^1.3.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
