@@ -9,14 +9,12 @@ class Layout extends React.Component {
       <html lang='es'>
         <head>
           <meta charSet='utf-8' />
-          <title>Project Title</title>
+          <title>{ this.props.title }</title>
           <meta name='viewport' content='width=device-width, inital-scale=1.0' />
           <link rel='stylesheet' href='/assets/app.css' />
         </head>
         <body>
-          <main role='application' id='app'>
-            { this.props.children }
-          </main>
+          { this.props.children }
           <script src='/assets/app.js'></script>
         </body>
       </html>
