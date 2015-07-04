@@ -10,9 +10,9 @@ import About from './components/About';
 
 const routes = (
   <Route path='/' handler={ App }>
-    <DefaultRoute name='main' handler={ ComponentList }/>
-    <Route name='components' handler={ ComponentList }/>
-    <Route name="about" handler={ About }/>
+    <DefaultRoute path='/' handler={ ComponentList }/>
+    <Route path='/components' handler={ ComponentList }/>
+    <Route path="/about" handler={ About }/>
   </Route>
 );
 
