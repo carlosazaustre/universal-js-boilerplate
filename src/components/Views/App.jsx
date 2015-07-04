@@ -3,7 +3,6 @@
 import React from 'react';
 import Layout from './Layout';
 import ComponentName from '../ComponentName/ComponentName';
-import ComponentForm from '../ComponentForm/ComponentForm';
 
 class App extends React.Component {
 
@@ -26,7 +25,6 @@ class App extends React.Component {
               );
             })
           }
-          <ComponentForm />
         </section>
       </Layout>
     );
