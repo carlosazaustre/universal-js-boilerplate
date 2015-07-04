@@ -11,7 +11,7 @@ const port = config.app.port;
 // -- Setup React Views engine -------------------------------------------------
 
 app.engine('.jsx', engine.server.create());
-app.set('views', path.join(__dirname, 'templates'));
+app.set('views', path.join(__dirname, 'components', 'Views'));
 app.set('view engine', 'jsx');
 app.set('view', engine.expressView);
 
