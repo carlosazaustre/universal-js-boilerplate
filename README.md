@@ -1,6 +1,6 @@
 # UniversalJS Boilerplate
 
-![Universal JS Boilerplate]('/docs/header_universaljs.jpg')
+![Universal JS Boilerplate](docs/header_universaljs.jpg)
 
 A boilerplate to quick start JavaScript Isomorphic Web Applications
 
