@@ -10,7 +10,7 @@ import About from './components/About';
 
 const routes = (
   <Route path='/' handler={ App }>
-    <DefaultRoute path='/' handler={ ComponentList }/>
+    <DefaultRoute handler={ ComponentList }/>
     <Route path='/components' handler={ ComponentList }/>
     <Route path="/about" handler={ About }/>
   </Route>
