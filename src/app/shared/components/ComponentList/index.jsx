@@ -10,13 +10,19 @@ class ComponentList extends React.Component {
     this.state = { components: this.props.components };
   }
 
+  boundClick (i) {
+    console.log(`You clicked ${this.props.components[i].title}`);
+  }
+
   render () {
     return (
       <section>
       {
-        this.state.components.map(component => {
+        this.state.components.map((component, i) => {
           return (
-            <ComponentName key={ component.id } title={ component.title }/>
+            <ComponentName key={ i }
+                           title={ component.title }
+                           onClick={ this.boundClick.bind(this, i) }/>
           );
         })
       }

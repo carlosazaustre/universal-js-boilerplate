@@ -11,7 +11,7 @@ class ComponentName extends React.Component {
 
   render () {
     return (
-      <article className='ComponentName'>
+      <article className='ComponentName' onClick={ this.props.onClick }>
         <h3 className='ComponentName-title'>{ this.state.title }</h3>
       </article>
     );
