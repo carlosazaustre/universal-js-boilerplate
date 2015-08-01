@@ -1,7 +1,6 @@
-import '../../../../styles/app.styl';
 import React from 'react';
 import { RouteHandler, Link } from 'react-router';
-import Layout from '../Layout/index.jsx';
+import Layout from './Layout.jsx';
 
 class App extends React.Component {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponentName from '../ComponentName/index.jsx';
+import ComponentName from './ComponentName.jsx';
 
 class ComponentList extends React.Component {
 

@@ -8,17 +8,21 @@
 
 // -- Base and Reset styles ----------------------------------------------------
 
-//@import './base/normalize.styl'
-//@import './base/reset.styl'
+@import './base/normalize.styl'
+@import './base/reset.styl'
 
 // -- Theme Styles -------------------------------------------------------------
 
-//@import url('http://fonts.googleapis.com/css?family=Lato:400,700');
-//@import './theme/variables'
+@import url('http://fonts.googleapis.com/css?family=Lato:400,700');
+@import './theme/variables'
 
 // -- Main styles --------------------------------------------------------------
 
-//body
-//  background-color $gray_light
-//  font-family $font_family_base
-//  font-size 16px
+body
+  background-color $gray_light
+  font-family $font_family_base
+  font-size 16px
+
+// -- Component Styles ---------------------------------------------------------
+
+@import './components/*'

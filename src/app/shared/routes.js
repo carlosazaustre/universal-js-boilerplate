@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, DefaultRoute } from 'react-router';
 
 // -- View Components
-import App from './components/App/index.jsx';
-import ComponentList from './components/ComponentList/index.jsx';
-import About from './components/About/index.jsx';
+import App from './components/App.jsx';
+import ComponentList from './components/ComponentList.jsx';
+import About from './components/About.jsx';
 
 const routes = (
   <Route path='/' handler={ App }>
