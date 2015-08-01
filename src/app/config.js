@@ -1,5 +1,3 @@
-'use strict';
-
 const config = {
   app: {
     name: 'Universal JS Boilerplate',

@@ -1,5 +1,3 @@
-'use strict';
-
 import path from 'path';
 import express from 'express';
 import engine from 'react-engine';

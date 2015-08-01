@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 class ComponentName extends React.Component {
@@ -10,6 +8,8 @@ class ComponentName extends React.Component {
   }
 
   render () {
+    //require('./style.styl');
+
     return (
       <article className='ComponentName' onClick={ this.props.onClick }>
         <h3 className='ComponentName-title'>{ this.state.title }</h3>

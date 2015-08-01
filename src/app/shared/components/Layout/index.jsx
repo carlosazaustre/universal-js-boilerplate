@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 class Layout extends React.Component {
@@ -13,12 +11,11 @@ class Layout extends React.Component {
           <title>{ this.props.title }</title>
           <meta name="description" content="" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel='stylesheet' href='/app.css' />
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         </head>
         <body>
           { this.props.children }
-          <script src='/app.js'></script>
+          <script src='/index.js'></script>
         </body>
       </html>
     );
