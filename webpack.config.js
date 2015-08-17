@@ -38,6 +38,10 @@ var common = {
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!stylus')
       },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
     ]
   },
   plugins: [
