@@ -1,8 +1,6 @@
-'use strict';
-
 import React from 'react';
 import { RouteHandler, Link } from 'react-router';
-import Layout from '../Layout';
+import Layout from './Layout.jsx';
 
 class App extends React.Component {
 

@@ -1,7 +1,5 @@
-'use strict';
-
 import React from 'react';
-import ComponentName from '../ComponentName';
+import ComponentName from './ComponentName.jsx';
 
 class ComponentList extends React.Component {
 
