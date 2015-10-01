@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {
+  Component,
+  PropTypes,
+} from 'react';
 import ComponentName from './ComponentName.jsx';
 
-class ComponentList extends React.Component {
+class ComponentList extends Component {
+
+  static propTypes = {
+    components: PropTypes.array.isRequired,
+  }
 
   constructor (props) {
     super(props);
