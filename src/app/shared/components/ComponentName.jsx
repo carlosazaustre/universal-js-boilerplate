@@ -1,6 +1,18 @@
-import React from 'react';
+import React, {
+  Component,
+  PropTypes,
+} from 'react';
 
-class ComponentName extends React.Component {
+class ComponentName extends Component {
+
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+  }
+  
+  static defaultProps = {
+    onClick: () => {},
+  }
 
   constructor (props) {
     super(props);

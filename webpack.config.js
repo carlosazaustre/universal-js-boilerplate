@@ -31,7 +31,7 @@ var common = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel?stage=0']
+        loaders: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.styl$/,
@@ -80,7 +80,7 @@ if (TARGET === 'dev') {
       loaders: [{
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel?stage=0']
+        loaders: ['react-hot', 'babel-loader', 'eslint-loader']
       }]
     }
   })

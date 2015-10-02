@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {
+  Component,
+  PropTypes,
+} from 'react';
 import { RouteHandler, Link } from 'react-router';
 import Layout from './Layout.jsx';
 
-class App extends React.Component {
+class App extends Component {
+  
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+  }
 
   constructor (props) {
     super(props);
