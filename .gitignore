@@ -4,4 +4,7 @@
 
 node_modules
 npm-debug.log
-build/public/app.js.map
+
+# hide builded files on repo
+build/public/*
+!build/.gitkeep
