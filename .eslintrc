@@ -13,15 +13,19 @@
     "__SERVER__": true
   },
   "ecmaFeatures": {
-    "jsx": true
+    "jsx": true,
+    "arrowFunctions": true
   },
   "rules": {
 
-    // Code style
     "indent": [2, 2],
     "quotes": [2, "single"],
+    "no-multi-spaces": 0,
+    "key-spacing": 0,
 
-    // React
+    "import/default": 1,
+    "import/no-unresolved": 1,
+
     "react/display-name": 0,
     "react/jsx-boolean-value": 1,
     "react/jsx-no-undef": 1,
