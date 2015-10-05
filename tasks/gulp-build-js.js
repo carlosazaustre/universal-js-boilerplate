@@ -1,5 +1,3 @@
-'use strict';
-
 import gulp       from 'gulp';
 import babelify   from 'babelify';
 import browserify from 'browserify';

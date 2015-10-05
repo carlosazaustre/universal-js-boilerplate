@@ -1,5 +1,3 @@
-'use strict';
-
 import gulp       from 'gulp';
 import eslint     from 'gulp-eslint';
 import jscs       from 'gulp-jscs';
@@ -9,7 +7,6 @@ export default () => {
   return gulp
     .src(config.scripts.input)
     .pipe(jscs())
-    .pipe(eslint())
+    .pipe(eslint({configFile: '.eslintrc'}))
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
-};
