@@ -1,7 +1,8 @@
 {
   "parser": "babel-eslint",
   "plugins": [
-    "react"
+    "react",
+    "import"
   ],
   "env": {
     "browser": true,
@@ -13,15 +14,28 @@
     "__SERVER__": true
   },
   "ecmaFeatures": {
-    "jsx": true
+    "jsx": false,
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "modules": true,
+    "classes": true
   },
   "rules": {
 
-    // Code style
     "indent": [2, 2],
     "quotes": [2, "single"],
+    "no-multi-spaces": 0,
+    "key-spacing": 0,
+    "strict": [2, "never"],
+    "no-shadow": [0],
+    "no-use-before-define": [2, "nofunc"],
+    "new-cap": [0],
 
-    // React
+    "import/default": 1,
+    "import/no-unresolved": 2,
+    "import/export": 2,
+    "import/no-named-as-default": 2,
+
     "react/display-name": 0,
     "react/jsx-boolean-value": 1,
     "react/jsx-no-undef": 1,
