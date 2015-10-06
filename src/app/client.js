@@ -1,5 +1,5 @@
 import Client from 'react-engine/lib/client';
-import routes from '../shared/routes.js';
+import routes from './routes.js';
 
 // -- Boot Options
 const options = { routes };

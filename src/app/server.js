@@ -2,7 +2,7 @@ import path from 'path';
 import express from 'express';
 import engine from 'react-engine';
 import favicon from 'serve-favicon';
-import config from '../config';
+import config from './config';
 
 const app = express();
 const port = config.app.port;
