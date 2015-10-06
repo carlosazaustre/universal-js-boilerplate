@@ -10,7 +10,7 @@ const routes = (
   <Route path='/' handler={ App }>
     <DefaultRoute handler={ ComponentList }/>
     <Route path='/components' handler={ ComponentList }/>
-    <Route path="/about" handler={ About }/>
+    <Route path='/about' handler={ About }/>
   </Route>
 );
 
