@@ -7,6 +7,9 @@ export default () => {
   return gulp
     .src(config.scripts.input)
     .pipe(jscs())
+    .pipe(jscs.reporter())
+    .pipe(jscs.reporter('fail'))
     .pipe(eslint({configFile: '.eslintrc'}))
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
+};

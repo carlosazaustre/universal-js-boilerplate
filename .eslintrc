@@ -1,8 +1,8 @@
 {
   "parser": "babel-eslint",
+  "extends": "airbnb",
   "plugins": [
-    "react",
-    "import"
+    "react"
   ],
   "env": {
     "browser": true,
@@ -27,19 +27,17 @@
     "no-multi-spaces": 0,
     "key-spacing": 0,
     "strict": [2, "never"],
+    "comma-dangle": [2, "never"],
     "no-shadow": [0],
     "no-use-before-define": [2, "nofunc"],
     "new-cap": [0],
 
-    "import/default": 1,
-    "import/no-unresolved": 2,
-    "import/export": 2,
-    "import/no-named-as-default": 2,
+    "react/jsx-quotes": 0,
+    "jsx-quotes": [2, "prefer-single"],
 
     "react/display-name": 0,
     "react/jsx-boolean-value": 1,
     "react/jsx-no-undef": 1,
-    "react/jsx-quotes": 1,
     "react/jsx-sort-prop-types": 0,
     "react/jsx-sort-props": 0,
     "react/jsx-uses-react": 1,

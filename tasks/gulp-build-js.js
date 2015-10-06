@@ -7,10 +7,10 @@ import config     from './cfg/gulp-config';
 
 export default () => {
   return browserify({
-    entries   : config.scripts.client,
-    debug     : true,
+    entries: config.scripts.client,
+    debug: true,
     extensions: ['.js', '.jsx'],
-    transform : babelify
+    transform: babelify
   })
   .bundle()
   .pipe(source('app.js'))
