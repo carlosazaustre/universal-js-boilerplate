@@ -6,8 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
-
 import gulp       from 'gulp';
 import linterJS   from './tasks/gulp-lint-js';
 import linterCSS  from './tasks/gulp-lint-css';
