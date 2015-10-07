@@ -5,7 +5,7 @@ var ROOT_PATH = path.resolve(__dirname);
 
 module.exports = {
   entry: {
-    app: path.resolve(ROOT_PATH, 'src/app/client/index.js'),
+    app: path.resolve(ROOT_PATH, 'src/app/client.js'),
     styles: path.resolve(ROOT_PATH, 'src/styles/app.styl')
   },
   output: {
@@ -34,6 +34,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('app.css')
   ]
 };

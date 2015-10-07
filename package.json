@@ -6,9 +6,9 @@
   "name": "universal-js-boilerplate",
   "version": "0.0.1",
   "description": "A boilerplate to start universal (isomorphic) web applications",
-  "main": "./src/app/server/index.js",
+  "main": "./src/app/server.js",
   "scripts": {
-    "start": "nodemon --exec babel-node --stage 0 -- ./src/app/server/index.js",
+    "start": "nodemon --exec babel-node --stage 0 -- ./src/app/server.js",
     "build": "TARGET=build webpack",
     "dev": "TARGET=dev webpack-dev-server --progress --colors --hot --inline --history-api-fallback --content-base www",
     "deploy": "TARGET=build webpack -p -d"

@@ -1,8 +1,8 @@
-import path from 'path';
+import path    from 'path';
 import express from 'express';
-import engine from 'react-engine';
+import engine  from 'react-engine';
 import favicon from 'serve-favicon';
-import config from './config';
+import config  from './config';
 
 const app = express();
 const port = config.app.port;
@@ -10,18 +10,18 @@ const port = config.app.port;
 // -- Setup React Views engine -------------------------------------------------
 
 app.engine('.jsx', engine.server.create({
-  reactRoutes: path.join(__dirname, '..', 'shared', 'routes.js')
+  reactRoutes: path.join(__dirname, '..', 'app', 'routes.js')
 }));
-app.set('views', path.join(__dirname, '..', 'shared', 'components'));
+app.set('views', path.join(__dirname, '..', 'app', 'components'));
 app.set('view engine', 'jsx');
 app.set('view', engine.expressView);
 
 // -- Routes & Middlewares -----------------------------------------------------
 
-const publicPath = path.join(__dirname, '..', '..', '..', 'build', 'public');
-app.use(express.static(publicPath));
+const publicPath = path.join(__dirname, '..', '..', 'build', 'public');
+const faviconPath = path.join(__dirname, '..', '..', 'build', 'public', 'favicon.ico');
 
-const faviconPath = path.join(__dirname, '..', '..', '..', 'build', 'public', 'favicon.ico');
+app.use(express.static(publicPath));
 app.use(favicon(faviconPath));
 
 const components = [
@@ -29,6 +29,7 @@ const components = [
   { id: 2, title: 'Item 2' },
   { id: 3, title: 'Item 3' }
 ];
+
 app.get('*', (req, res) => {
   res.render(req.url, {
     components: components,
