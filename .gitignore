@@ -8,3 +8,4 @@ npm-debug.log
 # hide builded files on repo
 build/public/*
 !build/.gitkeep
+!build/public/favicon.ico
