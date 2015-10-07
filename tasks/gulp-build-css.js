@@ -12,5 +12,5 @@ export default () => {
       'include css': true
     }))
     .pipe(minifyCSS())
-    .pipe(gulp.dest(config.styles.output));
+    .pipe(gulp.dest(config.output));
 };

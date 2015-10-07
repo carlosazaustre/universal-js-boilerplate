@@ -18,7 +18,6 @@ export default {
       './src/styles/**/*.styl',
       '!./src/styles/base/normalize.styl'
     ],
-    output: './build/public/app.css',
     watch: [
       './src/styles/**/*.styl'
     ]
