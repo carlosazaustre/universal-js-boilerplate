@@ -1,33 +1,33 @@
 import React, {
   Component,
-  PropTypes,
+  PropTypes
 } from 'react';
 import ComponentName from './ComponentName.jsx';
 
-class ComponentList extends Component {
+export default class ComponentList extends Component {
 
   static propTypes = {
-    components: PropTypes.array.isRequired,
-  }
+    components: PropTypes.array.isRequired
+  };
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = { components: this.props.components };
   }
 
-  boundClick (i) {
-    console.log(`You clicked ${this.props.components[i].title}`);
+  boundClick(iterator) {
+    console.log(`You clicked ${this.props.components[iterator].title}`);
   }
 
-  render () {
+  render() {
     return (
       <section>
       {
-        this.state.components.map((component, i) => {
+        this.state.components.map((component, iterator) => {
           return (
             <ComponentName key={ component.id }
                            title={ component.title }
-                           onClick={ this.boundClick.bind(this, i) }/>
+                           onClick={ this.boundClick.bind(this, iterator) }/>
           );
         })
       }

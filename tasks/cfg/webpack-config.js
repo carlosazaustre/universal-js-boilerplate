@@ -17,7 +17,10 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader', 'eslint-loader']
+        loaders: ['babel-loader', 'eslint-loader'],
+        query: {
+          optional: ['es7.classProperties']
+        }
       },
       {
         test: /\.styl$/,

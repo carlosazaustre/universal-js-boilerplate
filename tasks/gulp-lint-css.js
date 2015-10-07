@@ -5,5 +5,5 @@ import config     from './cfg/gulp-config';
 export default () => {
   return gulp
     .src(config.styles.input)
-    .pipe(stylint({ config: './tasks/cfg/.stylintrc' }));
+    .pipe(stylint({ config: '.stylintrc' }));
 };

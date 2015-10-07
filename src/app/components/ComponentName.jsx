@@ -1,25 +1,25 @@
 import React, {
   Component,
-  PropTypes,
+  PropTypes
 } from 'react';
 
-class ComponentName extends Component {
+export default class ComponentName extends Component {
 
   static propTypes = {
     title: PropTypes.string.isRequired,
-    onClick: PropTypes.func,
-  }
-  
-  static defaultProps = {
-    onClick: () => {},
-  }
+    onClick: PropTypes.func
+  };
 
-  constructor (props) {
+  static defaultProps = {
+    onClick: () => {}
+  };
+
+  constructor(props) {
     super(props);
     this.state = { title: this.props.title };
   }
 
-  render () {
+  render() {
     return (
       <article className='ComponentName' onClick={ this.props.onClick }>
         <h3 className='ComponentName-title'>{ this.state.title }</h3>

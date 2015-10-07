@@ -2,7 +2,7 @@ import React from 'react';
 
 class About extends React.Component {
 
-  render () {
+  render() {
     return (
       <section>
         <h3>About View</h3>

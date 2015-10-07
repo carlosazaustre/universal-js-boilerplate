@@ -2,7 +2,7 @@ import path from 'path';
 import express from 'express';
 import engine from 'react-engine';
 import favicon from 'serve-favicon';
-import config from '../config';
+import config from './config';
 
 const app = express();
 const port = config.app.port;
@@ -18,13 +18,13 @@ app.set('view', engine.expressView);
 
 // -- Routes & Middlewares -----------------------------------------------------
 
-let publicPath = path.join(__dirname, '..', '..', '..', 'build', 'public');
+const publicPath = path.join(__dirname, '..', '..', '..', 'build', 'public');
 app.use(express.static(publicPath));
 
-let faviconPath = path.join(__dirname, '..', '..', '..', 'build', 'public', 'favicon.ico');
+const faviconPath = path.join(__dirname, '..', '..', '..', 'build', 'public', 'favicon.ico');
 app.use(favicon(faviconPath));
 
-let components = [
+const components = [
   { id: 1, title: 'Item 1' },
   { id: 2, title: 'Item 2' },
   { id: 3, title: 'Item 3' }
