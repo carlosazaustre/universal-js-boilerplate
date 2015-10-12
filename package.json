@@ -34,12 +34,14 @@
   },
   "homepage": "https://github.com/carlosazaustre/universal-js-boilerplate",
   "dependencies": {
+    "eslint-loader": "^1.1.0",
     "express": "^4.13.0",
+    "gulp-stylus": "^2.1.0",
     "react": "^0.13.3",
-    "react-redux": "^2.1.2",
-    "redux": "^3.0.0",
     "react-engine": "^1.7.0",
-    "react-router": "^0.13.3",
+    "react-redux": "^2.1.2",
+    "react-router": "^0.13.4",
+    "redux": "^3.0.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {

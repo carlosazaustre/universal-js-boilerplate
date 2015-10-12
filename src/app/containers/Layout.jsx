@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { Connector } from 'react-redux';
 import Counter from '../components/Counter';
-import * as CounterAction from '../actions/counter';
+import * as CounterAction from '../actions/CounterActions';
 
-export default class Layout extends Component {
+export default class Layout extends React.Component {
  render() {
    return (
      <Connector select={state => ({ counter: state.counter })}>
@@ -13,7 +13,7 @@ export default class Layout extends Component {
    );
  }
 
- renderChild({ counter, dispatch }) {
+ renderChild({ Counter, dispatch }) {
    const actions = bindActionCreators(CounterAction, dispatch);
    return (
      <html lang='en'>
@@ -27,7 +27,7 @@ export default class Layout extends Component {
          <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
        </head>
        <body>
-           <Counter counter={counter} actions={actions} />
+           <Counter Counter={Counter} actions={actions} />
          <script src='/app.js'></script>
        </body>
      </html>

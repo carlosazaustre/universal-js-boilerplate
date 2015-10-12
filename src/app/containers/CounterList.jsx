@@ -1,29 +1,36 @@
-import React from 'react';
-import Counter from './../components/Counter.jsx';
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import Counter from '../components/Counter';
+import * as CounterActions from '../actions/CounterActions';
 
-export default class CounterList extends React.Component {
+class CounterApp extends Component {
 
   constructor(props) {
     super(props);
     this.state = { components: this.props.components };
-  };
-
-  render() {
-    return (
-      <section>
-      {
-        this.state.components.map((component, iterator) => {
-          return (
-            <Counter key={ component.id }
-                     title={ component.title }
-            />
-          );
-        })
-      }
-      </section>
-    );
   }
 
+  render() {
+    const { counter, dispatch } = this.props;
+    return (
+      this.state.components.map((component, iterator) => {
+        return (
+          <Counter key={ component.id }
+                   title={ component.title }
+                   counter={counter}
+                   {...bindActionCreators(CounterActions, dispatch)}
+          />
+        );
+      })
+    );
+  }
 }
 
-export default CounterList;
+function select(state) {
+  return {
+    counter: state.counter
+  };
+}
+
+export default connect(select)(CounterApp);
