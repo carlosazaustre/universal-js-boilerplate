@@ -2,14 +2,14 @@ import React from 'react';
 import { Route, DefaultRoute } from 'react-router';
 
 // -- View Components
-import App from './components/App.jsx';
-import ComponentList from './components/ComponentList.jsx';
-import About from './components/About.jsx';
+import Index from './containers/Index.jsx';
+import CounterList from './containers/CounterList.jsx';
+import About from './containers/About.jsx';
 
 const routes = (
-  <Route path='/' handler={ App }>
-    <DefaultRoute handler={ ComponentList }/>
-    <Route path='/components' handler={ ComponentList }/>
+  <Route path='/' handler={ Index }>
+    <DefaultRoute handler={ CounterList }/>
+    <Route path='/components' handler={ CounterList }/>
     <Route path='/about' handler={ About }/>
   </Route>
 );

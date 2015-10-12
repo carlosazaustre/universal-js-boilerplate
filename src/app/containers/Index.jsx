@@ -1,15 +1,12 @@
-import React, {
-  Component,
-  PropTypes
-} from 'react';
+import React, { PropTypes } from 'react';
 import { RouteHandler, Link } from 'react-router';
 import Layout from './Layout.jsx';
 
-export default class App extends Component {
+const propTypes = {
+  title: PropTypes.string.isRequired
+};
 
-  static propTypes = {
-    title: PropTypes.string.isRequired
-  };
+export default class App extends React.Component {
 
   constructor(props) {
     super(props);
