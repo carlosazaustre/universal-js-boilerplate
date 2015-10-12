@@ -8,8 +8,6 @@
   "description": "A boilerplate to start universal (isomorphic) web applications",
   "main": "./src/app/server.js",
   "scripts": {
-    "w": "gulp watch",
-    "watch": "npm run w & npm run start",
     "start": "nodemon --exec babel-node --stage 0 -- ./src/app/server.js",
     "build": "TARGET=build webpack",
     "dev": "TARGET=dev webpack-dev-server --progress --colors --hot --inline --history-api-fallback --content-base www",
@@ -51,6 +49,7 @@
     "babelify": "^6.1.2",
     "browserify": "^10.2.4",
     "css-loader": "^0.15.5",
+    "del": "^2.0.2",
     "eslint": "^1.6.0",
     "eslint-config-airbnb": "^0.1.0",
     "eslint-loader": "^1.0.0",
