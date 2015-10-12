@@ -9,11 +9,11 @@ const configEslint = {
 
 export default () => {
   return gulp
-    .src(config.scripts.input)
-    .pipe(jscs())
-    .pipe(jscs.reporter())
-    .pipe(jscs.reporter('fail'))
-    .pipe(eslint(configEslint))
-    .pipe(eslint.format())
-    .pipe(eslint.failOnError());
+          .src(config.scripts.input)
+          .pipe(jscs())
+          .pipe(jscs.reporter())
+          .pipe(jscs.reporter('console'))
+          .pipe(eslint(configEslint))
+          .pipe(eslint.format())
+          .pipe(eslint.failOnError());
 };

@@ -8,6 +8,6 @@ const configStylint = {
 
 export default () => {
   return gulp
-    .src(config.styles.input)
-    .pipe(stylint(configStylint));
+          .src(config.styles.input)
+          .pipe(stylint(configStylint));
 };

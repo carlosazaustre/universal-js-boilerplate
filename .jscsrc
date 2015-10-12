@@ -4,5 +4,7 @@
   "validateLineBreaks": "LF",
   "validateIndentation": 2,
   "requireTrailingComma": false,
+  "requireCapitalizedConstructors": false,
+  "esnext": true,
   "excludeFiles": ["build/**", "node_modules/**"]
 }

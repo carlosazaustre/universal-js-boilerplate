@@ -11,8 +11,8 @@ const configStylus = {
 
 export default () => {
   return gulp
-    .src(config.styles.main)
-    .pipe(stylus(configStylus))
-    .pipe(minifyCSS())
-    .pipe(gulp.dest(config.output));
+          .src(config.styles.main)
+          .pipe(stylus(configStylus))
+          .pipe(minifyCSS())
+          .pipe(gulp.dest(config.output));
 };

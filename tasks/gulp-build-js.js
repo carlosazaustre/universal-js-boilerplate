@@ -14,8 +14,8 @@ const configBrowserify = {
 
 export default () => {
   return browserify(configBrowserify)
-  .bundle()
-  .pipe(source('app.js'))
-  .pipe(buffer())
-  .pipe(gulp.dest(config.output));
+          .bundle()
+          .pipe(source('app.js'))
+          .pipe(buffer())
+          .pipe(gulp.dest(config.output));
 };
