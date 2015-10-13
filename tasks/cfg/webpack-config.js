@@ -1,7 +1,7 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var ROOT_PATH = path.resolve(__dirname);
+var ROOT_PATH = path.join(__dirname, '..', '..');
 
 module.exports = {
   entry: {
@@ -9,7 +9,7 @@ module.exports = {
     styles: path.resolve(ROOT_PATH, 'src/styles/app.styl')
   },
   output: {
-    path: path.resolve(ROOT_PATH, 'build/public'),
+    path: path.resolve(ROOT_PATH, '../build/public'),
     filename: 'app.js'
   },
   module: {
@@ -17,10 +17,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader', 'eslint-loader'],
-        query: {
-          optional: ['es7.classProperties']
-        }
+        loaders: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.styl$/,
