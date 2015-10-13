@@ -1,33 +1,38 @@
-import React, { Component } from 'react';
-import CounterApp from './CounterApp';
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
-import { devTools, persistState } from 'redux-devtools';
-import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
-import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
-import * as reducers from '../reducers';
+import React, {
+  Component,
+  PropTypes
+} from 'react';
+import { RouteHandler, Link } from 'react-router';
+import Layout from './Layout.jsx';
 
-const finalCreateStore = compose(
-  applyMiddleware(thunk)
-)(createStore);
-
-const reducer = combineReducers(reducers);
-const store = finalCreateStore(reducer);
-
-if (module.hot) {
-  module.hot.accept('../reducers', () =>
-    store.replaceReducer(combineReducers(require('../reducers')))
-  );
-}
+const propTypes = {
+  title: PropTypes.string.isRequired
+};
 
 export default class App extends Component {
 
-  render() {
-     return (
-       <Provider store={store}>
-         {() => <CounterApp /> }
-       </Provider>
-     );
-   }
+  constructor(props) {
+    super(props);
+    this.state = { components: this.props.components };
+  }
 
-};
+  render() {
+    return (
+      <Layout {...this.props }>
+        <header>
+          <h1>{ this.props.title }</h1>
+        </header>
+        <nav>
+          <ul>
+            <li><Link to='/components'>Components List</Link></li>
+            <li><Link to='/about'>About</Link></li>
+          </ul>
+        </nav>
+        <main role='application'>
+          <RouteHandler {...this.props}/>
+        </main>
+      </Layout>
+    );
+  }
+
+}
