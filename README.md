@@ -38,21 +38,23 @@ And open your browser on `http://localhost:3000`
 ├── /build/                   # Transpiled and minifiqued output files.
 ├── /docs/                    # Documentation about your project.
 ├── /node_modules/            # Node Modules and 3rd-party libraries.
-├── /src/                     # Source code of the web application.  
+├── /src/                     # Source code of the web application.
 │   ├── /app/                 # Isomorphic App source code.
-│   │   ├── /client/          # Client-side startup script.
-│   │   ├── /server/          # Server-side startup script.
-│   │   ├── /shared/          # Shared components between Client-Server.
-│   │   │   ├── /components/  # React components.
-│   │   │   └── routes.js     # Shared routes between Client-Server.
+│   │   ├── /components/      # React components.
+│   │   ├── /containers/      # Redux containers.
+│   │   └── routes.js         # Shared routes between Client-Server.
+│   │   └── client.js         #
+│   │   └── server.js         #
 │   │   └── config.js         # App config (URLs, names, etc...).
 │   └── /styles/              # Stylesheets coding with Stylus Preprocessor.
+├── /tasks/                   # Gulp tasks for build the client part
 ├── gulpfile.babel.js         # Config file for automated Builders.
 ├── package.json              # App manifest and list of libraries installed.
 ├── .editorconfig             # define and maintain consistent coding styles.
-├── .eslintrc                 # ECMAScript 6 and React linter.
-├── .jscsrc                   # JavaScript code styles
-└── .stylintc                 # Stylus CSS code style
+├── .eslintrc                 # ECMAScript6 and React Code linter.
+├── .babelrc                  # babel ES6 rules.
+├── .jscsrc                   # JavaScript Code styles.
+└── .stylintc                 # Stylus CSS Code style.
 ```
 
 ## License
