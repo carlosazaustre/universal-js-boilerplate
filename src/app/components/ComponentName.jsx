@@ -12,17 +12,17 @@ const defaultProps = {
   onClick: () => {}
 };
 
-getInitialState = () => {
+function getInitialState() {
   return {
     counter: 0
   };
-};
+}
 
-counterClick = () => {
+function counterClick() {
   this.setState({
     counter: this.state.counter + 1
   });
-};
+}
 
 export default class ComponentName extends Component {
 

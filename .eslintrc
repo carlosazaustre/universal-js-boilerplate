@@ -41,6 +41,7 @@
     "id-length": 0,
     "jsx-quotes": [2, "prefer-single"],
 
+    "no-unused-vars": 0,
     "padded-blocks": 0,
     "block-scoped-var": 0,
 
