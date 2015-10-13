@@ -61,7 +61,6 @@
     "eslint-plugin-react": "^2.7.1",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "expect": "^1.8.0",
-    "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
