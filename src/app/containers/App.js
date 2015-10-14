@@ -3,7 +3,7 @@ import React, {
   PropTypes
 } from 'react';
 import { RouteHandler, Link } from 'react-router';
-import Layout from './Layout.jsx';
+import Layout from './Layout';
 
 const propTypes = {
   title: PropTypes.string.isRequired

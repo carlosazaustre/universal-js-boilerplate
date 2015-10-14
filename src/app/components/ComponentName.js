@@ -28,7 +28,7 @@ export default class ComponentName extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { title: this.props.title, counter: this.state.counter };
+    this.state = { title: this.props.title, counter: this.counter };
   }
 
   render() {

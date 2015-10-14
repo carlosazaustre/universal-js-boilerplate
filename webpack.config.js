@@ -1,49 +1,39 @@
+/*eslint-disable */
+var path = require('path');
 var webpack = require('webpack');
-var merge = require('webpack-merge');
-var config = require('./tasks/cfg/webpack-config');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var TARGET = process.env.TARGET;
-
-switch (TARGET) {
-  case 'build':
-    module.exports = merge(
-      config,
-      {
-        devtool: 'source-map',
-        loaders: [
-          { test: /\.json$/, exclude: /node_modules/, loader: 'json' }
-        ],
-        plugins: [
-          new webpack.DefinePlugin({
-            'process.env': {
-              NODE_ENV: JSON.stringify('production')
-            }
-          }),
-          new webpack.optimize.UglifyJsPlugin({
-            compress: {
-              warnings: false
-            }
-          })
-        ]
-      }
-    );
-    break;
-  case 'dev':
-    module.exports = merge(
-      config,
-      {
-        devtool: 'eval',
-        entry: [
-          'webpack/hot/dev-server'
-        ],
-        module: {
-          loaders: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loaders: ['react-hot', 'babel-loader', 'eslint-loader']
-          }]
-        }
-      }
-    );
-    break;
-}
+module.exports = {
+  devtool: 'eval-source-map',
+  entry: [
+    'webpack-hot-middleware/client?reload=true',
+    path.join(__dirname, 'src/app/client.js'),
+    path.join(__dirname, 'src/styles/app.styl')
+  ],
+  output: {
+    path: path.join(__dirname, '../build/public'),
+    filename: 'app.js',
+    publicPath: '/'
+  },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    })
+  ],
+  module: {
+    loaders: [{
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      loader: 'babel'
+    }, {
+      test: /\.json?$/,
+      loader: 'json'
+    }, {
+      test: /\.styl$/,
+      loader: 'style-loader!css-loader!stylus-loader'
+    }]
+  }
+};

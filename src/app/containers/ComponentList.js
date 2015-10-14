@@ -2,7 +2,7 @@ import React, {
   Component,
   PropTypes
 } from 'react';
-import ComponentName from './../components/ComponentName.jsx';
+import ComponentName from './../components/ComponentName';
 
 const propTypes = {
   components: PropTypes.array.isRequired
