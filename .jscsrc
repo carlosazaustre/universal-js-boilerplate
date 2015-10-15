@@ -2,7 +2,6 @@
   "preset": "airbnb",
   "disallowSpacesInAnonymousFunctionExpression": null,
   "validateLineBreaks": "LF",
-  "validateIndentation": 2,
   "requireTrailingComma": false,
   "requireCapitalizedConstructors": false,
   "esnext": true,
