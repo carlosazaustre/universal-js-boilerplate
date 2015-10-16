@@ -1,20 +1,24 @@
-/*eslint-disable */
-import {incrementIfOdd, increment, incrementAsync} from "../../actions/CounterActions";
-import {spy, useFakeTimers} from "sinon";
-import chai, {expect} from "chai";
-import sinonChai from "sinon-chai";
+/* eslint no-unused-expressions: 0 */
+import { incrementIfOdd, increment, incrementAsync } from '../../actions/CounterActions';
+import { spy, useFakeTimers } from 'sinon';
+import chai, { expect } from 'chai';
+import sinonChai from 'sinon-chai';
+
 chai.use(sinonChai);
 
-describe('counter actions',() => {
+describe('counter actions', () => {
 
-  it('dispatch increment if odd',() => {
-    let getState = () => {return {counter:3}};
+  it('dispatch increment if odd', () => {
+    let getState = () => {
+      return { counter:3 };
+    };
+
     let dispatch = spy();
-    incrementIfOdd()(dispatch,getState);
+    incrementIfOdd()(dispatch, getState);
     expect(dispatch).to.have.been.calledWith(increment());
   });
 
-  it('increment async calls increment after one sec',() => {
+  it('increment async calls increment after one sec', () => {
     let dispatch = spy();
     let clock = useFakeTimers();
     incrementAsync()(dispatch);
@@ -25,4 +29,4 @@ describe('counter actions',() => {
     clock.restore();
 
   });
-})
+});

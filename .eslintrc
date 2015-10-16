@@ -7,11 +7,14 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
   "globals": {
     "__DEV__": true,
-    "__SERVER__": true
+    "__SERVER__": true,
+    "describe": true,
+    "it": true
   },
   "ecmaFeatures": {
     "jsx": true,
@@ -33,6 +36,7 @@
     "new-cap": [0],
     "object-curly-spacing": [2, "always"],
     "no-undef": 2,
+    "prefer-const": 0,
     "no-underscore-dangle": 0,
     "func-names": 0,
     "no-else-return": 0,
