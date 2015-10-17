@@ -24,5 +24,5 @@ gulp.task('build', ['build:js', 'build:css']);
 
 gulp.task('watch', () => {
   gulp.watch(config.scripts.watch, ['build:js']);
-  gulp.watch(config.styles.wathc, ['build:css']);
+  gulp.watch(config.styles.watch, ['build:css']);
 });
