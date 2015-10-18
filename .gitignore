@@ -9,3 +9,5 @@ npm-debug.log
 build/public/*
 !build/.gitkeep
 !build/public/favicon.ico
+
+src/app_/*

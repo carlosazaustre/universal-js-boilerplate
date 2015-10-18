@@ -1,15 +1,18 @@
 import React from 'react';
 import { Route, DefaultRoute } from 'react-router';
 
-// -- View Components
-import App from './components/App.jsx';
-import ComponentList from './components/ComponentList.jsx';
-import About from './components/About.jsx';
+import App from './containers/App';
+import * as containers from './containers';
+
+const {
+  CounterPage,
+  About
+} = containers;
 
 const routes = (
   <Route path='/' handler={ App }>
-    <DefaultRoute handler={ ComponentList }/>
-    <Route path='/components' handler={ ComponentList }/>
+    <DefaultRoute handler={ CounterPage }/>
+    <Route path='/components' handler={ CounterPage }/>
     <Route path='/about' handler={ About }/>
   </Route>
 );

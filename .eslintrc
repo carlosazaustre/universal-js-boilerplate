@@ -7,23 +7,26 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
   "globals": {
     "__DEV__": true,
-    "__SERVER__": true
+    "__SERVER__": true,
+    "describe": true,
+    "it": true
   },
   "ecmaFeatures": {
-    "jsx": false,
+    "jsx": true,
     "arrowFunctions": true,
     "blockBindings": true,
     "modules": true,
     "classes": true
   },
   "rules": {
-
+    "valid-jsdoc": 2,
     "indent": [2, 2],
-    "quotes": [2, "single"],
+    "quotes": [2, "single", "avoid-escape"],
     "no-multi-spaces": 0,
     "key-spacing": 0,
     "strict": [2, "never"],
@@ -31,10 +34,22 @@
     "no-shadow": [0],
     "no-use-before-define": [2, "nofunc"],
     "new-cap": [0],
-
-    "react/jsx-quotes": 0,
+    "object-curly-spacing": [2, "always"],
+    "no-undef": 2,
+    "prefer-const": 0,
+    "no-underscore-dangle": 0,
+    "func-names": 0,
+    "no-else-return": 0,
+    "no-console": 0,
+    "no-throw-literal": 0,
+    "id-length": 0,
     "jsx-quotes": [2, "prefer-single"],
 
+    "no-unused-vars": 0,
+    "padded-blocks": 0,
+    "block-scoped-var": 0,
+
+    "react/jsx-quotes": 0,
     "react/display-name": 0,
     "react/jsx-boolean-value": 1,
     "react/jsx-no-undef": 1,
