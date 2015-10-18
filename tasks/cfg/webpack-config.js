@@ -10,7 +10,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(ROOT_PATH, '../build/public'),
-    filename: 'app.js'
+    filename: 'app.js',
+    publicPath: '/'
   },
   module: {
     loaders: [
