@@ -1,4 +1,13 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes';
+export const SET_COUNTER = 'SET_COUNTER';
+export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+
+export function set(value) {
+  return {
+    type: SET_COUNTER,
+    payload: value
+  };
+}
 
 export function increment() {
   return {
@@ -15,6 +24,7 @@ export function decrement() {
 export function incrementIfOdd() {
   return (dispatch, getState) => {
     const { counter } = getState();
+
     if (counter % 2 === 0) {
       return;
     }

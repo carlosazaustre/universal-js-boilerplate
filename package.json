@@ -8,7 +8,7 @@
   "description": "A boilerplate to start universal (isomorphic) web applications",
   "main": "./src/app/server.js",
   "scripts": {
-    "start": "nodemon --exec babel-node --stage 0 -- ./src/app/server.js --compilers js:babel/register",
+    "start": "nodemon --exec babel-node -- ./src/app/server.js",
     "build": "TARGET=build webpack",
     "dev": "TARGET=dev webpack-dev-server --progress --colors --hot --inline --history-api-fallback --content-base www",
     "deploy": "TARGET=build webpack -p -d"
@@ -38,11 +38,11 @@
     "express": "^4.13.3",
     "qs": "^4.0.0",
     "react": "^0.14.0",
+    "react-dom": "^0.14.0",
     "react-engine": "^1.7.0",
     "react-redux": "^4.0.0",
-    "react-router": "^0.13.4",
-    "react-dom": "^0.14.0",
-    "redux": "^3.0.0",
+    "react-router": "^1.0.0-rc3",
+    "redux": "^3.0.2",
     "redux-thunk": "^0.1.0",
     "serve-favicon": "^2.3.0",
     "serve-static": "^1.10.0"
@@ -71,6 +71,7 @@
     "gulp-jscs": "^3.0.1",
     "gulp-minify-css": "^1.2.0",
     "gulp-stylus": "^2.1.0",
+    "gulp-stylint": "^3.0.0",
     "jsdom": "^5.6.1",
     "json-loader": "^0.5.2",
     "mocha": "^2.2.5",
@@ -81,6 +82,7 @@
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^1.2.8",
     "react-transform-hmr": "^1.0.0",
+    "redux": "^3.0.2",
     "redux-devtools": "^2.1.5",
     "redux-logger": "^2.0.4",
     "redux-promise": "^0.5.0",
@@ -95,6 +97,7 @@
     "webpack-dev-middleware": "^1.2.0",
     "webpack-dev-server": "^1.10.1",
     "webpack-hot-middleware": "^2.2.0",
-    "webpack-merge": "^0.1.2"
+    "webpack-merge": "^0.1.2",
+    "webpack-module-hot-accept": "1.0.3"
   }
 }

@@ -8,7 +8,7 @@ import config  from './config';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import webpackConfig from '../../tasks/cfg/webpack-config';
+import webpackConfig from '../../webpack.config';
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -57,16 +57,16 @@ app.get('*', (req, res) => {
 
     // Render the component to a string
     const html = renderToString(
-      <Provider store={store}>
+      <Provider store={ store }>
         <App />
       </Provider>
     );
 
     // Grab the initial state from our Redux store
-    const finalState = store.getState();
+    const firstState = store.getState();
 
     // Send the rendered page back to the client
-    res.send(renderFullPage(html, finalState));
+    res.send(renderFullPage(html, firstState));
   });
 });
 
