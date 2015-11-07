@@ -11,3 +11,4 @@ build/public/*
 !build/public/favicon.ico
 
 src/app_/*
+App_
